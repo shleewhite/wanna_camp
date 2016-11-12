@@ -6,8 +6,8 @@
   <h1>So, You Wanna Camp in Santa Cruz??????</h1>
 
   <form>
-    <p>When are ya tryin to go camping?</p>
-    <select id="months">
+    <p>When are you tryin to go camping?</p>
+    <select id="months" label="months">
       <option>January</option>
       <option>February</option>
       <option>March</option>
@@ -22,7 +22,7 @@
       <option>December</option>
     </select>
     <p>How far do you want to drive?</p>
-    <input type="range" min="0" max="75" step="5" onchange="showValue(this.value)"/>
+    <input type="range" label="distance"min="0" max="75" step="5" onchange="showValue(this.value)"/>
     <span id="range">40 miles</span>
       
     <p>Can you purify your own water?</p>
@@ -33,14 +33,14 @@
     <input type="radio" name="bathroom" label="yes">Yes
     <input type="radio" name="bathroom" label="no">No
 
-    <p>You trynna cook out here?</p>
+    <p>You tryin cook out here?</p>
     <input type="radio" name="cook" label="yes">Yes
     <input type="radio" name="cook" label="no">No
 
     <script type="text/javascript">
-        function showValue(newValue) {
-          document.getElementById("range").innerHTML=newValue + " miles";
-        }
+      function showValue(newValue) {
+        document.getElementById("range").innerHTML=newValue + " miles";
+      }
     </script>
 
     <br>
