@@ -1,5 +1,6 @@
 <head>
   <title>Camp Cruz</title>
+  <script src="main.js"></script>
 </head>
 
 <body>
@@ -23,24 +24,23 @@
     </select>
     <p>How far do you want to drive?</p>
     <input type="range" min="0" max="75" step="5" onchange="showValue(this.value)"/>
-    <span id="range">0 miles</span>
+    <span id="range">40 miles</span>
       
     <p>Can you purify your own water?</p>
     <input type="radio" name="water-is-pure" label="yes">Yes
     <input type="radio" name="water-not-pure" label="no">No
 
     <p>Do you want some form of bathroom?</p>
-    <input type="radio" name="water-is-pure" label="yes">Yes
-    <input type="radio" name="water-not-pure" label="no">No
+    <input type="radio" name="need-bathroom" label="yes">Yes
+    <input type="radio" name="no-bathroom" label="no">No
 
     <p>You trynna cook out here?</p>
-    <input type="radio" name="water-is-pure" label="yes">Yes
-    <input type="radio" name="water-not-pure" label="no">No
-
-    <script type="text/javascript">
-        function showValue(newValue) {
-          document.getElementById("range").innerHTML=newValue + " miles";
-        }
-      </script>
+    <input type="radio" name="yes-cook" label="yes">Yes
+    <input type="radio" name="no-cook" label="no">No
   </form>
+  <script type="text/javascript">
+    function showValue(newValue) {
+      document.getElementById("range").innerHTML=newValue + " miles";
+    }
+  </script>
 </body>
