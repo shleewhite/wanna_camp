@@ -1,5 +1,6 @@
 <head>
   <title>Camp Cruz</title>
+  <script src="main.js"></script>
 </head>
 
 <body>
@@ -34,17 +35,29 @@
     <input type="radio" name="no-bathroom" label="no">No
 
     <p>You trynna cook out here?</p>
+<<<<<<< HEAD
+    <input type="radio" name="yes-cook" label="yes">Yes
+    <input type="radio" name="no-cook" label="no">No
+=======
     <input type="radio" name="water-is-pure" label="yes">Yes
     <input type="radio" name="water-not-pure" label="no">No
+
+    <script type="text/javascript">
+        function showValue(newValue) {
+          document.getElementById("range").innerHTML=newValue + " miles";
+        }
+    </script>
+
     <br>
     <br>
     {{> submit}}
-	<script type="text/javascript">
-    	function showValue(newValue) {
-      		document.getElementById("range").innerHTML=newValue + " miles";
-    	}
-  	</script>
+>>>>>>> 62a47dea9096ab844703fd387ba4ad1afd5b0221
   </form>
+  <script type="text/javascript">
+    function showValue(newValue) {
+      document.getElementById("range").innerHTML=newValue + " miles";
+    }
+  </script>
 </body>
 
 
