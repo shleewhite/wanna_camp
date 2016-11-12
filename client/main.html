@@ -41,6 +41,15 @@
         function showValue(newValue) {
           document.getElementById("range").innerHTML=newValue + " miles";
         }
-      </script>
+    </script>
+
+    <br>
+    <br>
+    {{> submit}}
   </form>
 </body>
+
+
+<template name="submit">
+	<button>Submit</button>
+</template>
