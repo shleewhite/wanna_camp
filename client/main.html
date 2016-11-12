@@ -5,21 +5,35 @@
 <body>
   <h1>So, You Wanna Camp in Santa Cruz?</h1>
 
-  {{> hello}}
-  {{> info}}
+  {{> when}}
+  {{> distance}}
+  {{> water}}
+  {{> plumbing}}
+  {{> cook}}
 </body>
 
-<template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+<template name="when">
+  <p>When are ya tryin to go camping?</p>
 </template>
 
-<template name="info">
-  <h2>Learn Meteor!</h2>
-  <ul>
-    <li><a href="https://www.meteor.com/try" target="_blank">Do the Tutorial</a></li>
-    <li><a href="http://guide.meteor.com" target="_blank">Follow the Guide</a></li>
-    <li><a href="https://docs.meteor.com" target="_blank">Read the Docs</a></li>
-    <li><a href="https://forums.meteor.com" target="_blank">Discussions</a></li>
-  </ul>
+<template name="distance">
+  <p>How far do you want to drive?</p>
+</template>
+
+<template name="water">
+  <p>Can you purify your own water?</p>
+  <button>Yes</button>
+  <button>No</button>
+</template>
+
+<template name="plumbing">
+  <p>Do you want some form of bathroom?</p>
+  <button>Yes</button>
+  <button>No</button>
+</template>
+
+<template name="cook">
+  <p>You trynna cook out here?</p>
+  <button>Yes</button>
+  <button>No</button>
 </template>
