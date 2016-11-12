@@ -5,16 +5,34 @@
 <body>
   <h1>So, You Wanna Camp in Santa Cruz?</h1>
 
-  {{> when}}
+  <form>
+    When are ya tryin to go camping?<br><select id="months">
+      <option>January</option>
+      <option>February</option>
+      <option>March</option>
+      <option>April</option>
+      <option>May</option>
+      <option>June</option>
+      <option>July</option>
+      <option>August</option>
+      <option>September</option>
+      <option>October</option>
+      <option>November</option>
+      <option>December</option>
+    </select>
+  </form>
+
+
+  <!-- {{> when}} -->
   {{> distance}}
   {{> water}}
   {{> plumbing}}
   {{> cook}}
 </body>
 
-<template name="when">
+<!-- <template name="when">
   <p>When are ya tryin to go camping?</p>
-</template>
+</template> -->
 
 <template name="distance">
   <p>How far do you want to drive?</p>
