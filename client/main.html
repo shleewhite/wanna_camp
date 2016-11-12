@@ -6,7 +6,8 @@
   <h1>So, You Wanna Camp in Santa Cruz??????</h1>
 
   <form>
-    When are ya tryin to go camping?<br><select id="months">
+    <p>When are ya tryin to go camping?</p>
+    <select id="months">
       <option>January</option>
       <option>February</option>
       <option>March</option>
@@ -20,38 +21,60 @@
       <option>November</option>
       <option>December</option>
     </select>
+    <p>How far do you want to drive?</p>
+    <input type="range" min="0" max="75" step="5" onchange="showValue(this.value)"/>
+    <span id="range">0 miles</span>
+      
+    <p>Can you purify your own water?</p>
+    <input type="radio" name="water-is-pure" label="yes">Yes
+    <input type="radio" name="water-not-pure" label="no">No
+
+    <p>Do you want some form of bathroom?</p>
+    <input type="radio" name="water-is-pure" label="yes">Yes
+    <input type="radio" name="water-not-pure" label="no">No
+
+    <p>You trynna cook out here?</p>
+    <input type="radio" name="water-is-pure" label="yes">Yes
+    <input type="radio" name="water-not-pure" label="no">No
+
+    <script type="text/javascript">
+        function showValue(newValue) {
+          document.getElementById("range").innerHTML=newValue + " miles";
+        }
+      </script>
   </form>
 
 
   <!-- {{> when}} -->
-  {{> distance}}
-  {{> water}}
-  {{> plumbing}}
-  {{> cook}}
+<!--   {{> distance}} -->
+<!--   {{> water}} -->
+<!--   {{> plumbing}}
+  {{> cook}} -->
 </body>
 
 <!-- <template name="when">
   <p>When are ya tryin to go camping?</p>
 </template> -->
 
-<template name="distance">
-  <p>How far do you want to drive?</p>
-</template>
-
+<!-- <template name="distance">
+  <p></p>
+</template> -->
+<!-- 
 <template name="water">
-  <p>Can you purify your own water?</p>
+  
   <button>Yes</button>
   <button>No</button>
 </template>
-
-<template name="plumbing">
-  <p>Do you want some form of bathroom?</p>
+ -->
+<!-- <template name="plumbing">
+ 
   <button>Yes</button>
   <button>No</button>
 </template>
 
 <template name="cook">
-  <p>You trynna cook out here?</p>
+ 
   <button>Yes</button>
   <button>No</button>
 </template>
+ -->
