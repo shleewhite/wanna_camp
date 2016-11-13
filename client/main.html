@@ -8,6 +8,7 @@
   <div class="main">
     <h1 id="header">So, You Wanna Camp in Santa Cruz?</h1>
     {{> submit}}
+    {{> results}}
   </div>
 </body>
 
@@ -68,24 +69,20 @@
   </form>
 </template>
 
-
-
-<!-- <template name="search-results">
-  <ul class="list-group">
-    {{#if searching}}
-      {{> loading}}
-    {{else}}
-      {{#each places}}
-        <p></p>
-
-
-        <li class="list-group-item clearfix">
-          <span class="pull-left">{{name}} by <strong>{{artist}}</strong></span>
-          <span class="pull-right">{{year}}</span>
-        </li>
-      {{else}}
-        <p class="alert alert-warning">Nothing found for {{query}}. Sorry, bub.</p>
-      {{/each}}
-    {{/if}}
-  </ul>
-</template> --> 
+<template name="results">
+  {{#each places}} 
+    <div>
+      <p>{{name}}</p>
+      <ul>
+        <li>{{pet}}</li>
+        <li>{{water}}</li>
+        <li>{{plumbing}}</li>
+        <li>{{cooking}}</li>
+      </ul>
+      <ul>
+      <!-- ul of all elements of nearby -->
+     </ul>
+     <!-- if null: say no reservation -->
+    <!-- if not null: reservation: link {{reservation}}-->
+    </div>
+</template>
