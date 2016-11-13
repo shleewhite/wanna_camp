@@ -4,10 +4,13 @@
 
 <body>
   <h1>So, You Wanna Camp in Santa Cruz??????</h1>
+  {{> submit}}
+</body>
 
-  <form>
+<template name="submit">
+  <form id="subButton">
     <p>When are you tryin to go camping?</p>
-    <select id="months" label="months">
+    <select id="months" name="months">
       <option>January</option>
       <option>February</option>
       <option>March</option>
@@ -21,34 +24,56 @@
       <option>November</option>
       <option>December</option>
     </select>
-    <p>How far do you want to drive?</p>
-    <input type="range" label="distance" min="0" max="75" step="5" onchange="showValue(this.value)"/>
+    <p>How far are you willin to drive?</p>
+    <input type="range" name="distance" id="distance" min="0" max="75" step="5" onchange="showValue(this.value)"/>
     <span id="range">40 miles</span>
       
-    <p>Can you purify your own water?</p>
-    <input type="radio" name="water" label="yes">Yes
-    <input type="radio" name="water" label="no">No
+    <p>HAha water is funny you want it to be clean?</p>
+    <select id="water" name="water">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
 
     <p>Do you want some form of bathroom?</p>
-    <input type="radio" name="bathroom" label="yes">Yes
-    <input type="radio" name="bathroom" label="no">No
+    <select id="bathroom" name="bathroom">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
 
-    <p>You tryin cook out here?</p>
-    <input type="radio" name="cook" label="yes">Yes
-    <input type="radio" name="cook" label="no">No
+    <p>You tryin to cook on a fire?</p>
+    <select id="cook" name="cook">
+      <option>Yes</option>
+      <option>No</option>
+    </select>
 
     <script type="text/javascript">
       function showValue(newValue) {
         document.getElementById("range").innerHTML=newValue + " miles";
       }
     </script>
-
     <br>
     <br>
-    {{> submit}}
+    <button>Find me a campground!</button>
   </form>
-</body>
-
-<template name="submit">
-	<button>Submit</button>
+	
 </template>
+
+<!-- <template name="search-results">
+  <ul class="list-group">
+    {{#if searching}}
+      {{> loading}}
+    {{else}}
+      {{#each places}}
+        <p></p>
+
+
+        <li class="list-group-item clearfix">
+          <span class="pull-left">{{name}} by <strong>{{artist}}</strong></span>
+          <span class="pull-right">{{year}}</span>
+        </li>
+      {{else}}
+        <p class="alert alert-warning">Nothing found for {{query}}. Sorry, bub.</p>
+      {{/each}}
+    {{/if}}
+  </ul>
+</template> -->
