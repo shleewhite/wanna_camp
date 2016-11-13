@@ -15,46 +15,54 @@
 <template name="submit">
   <form id="subButton">
     <p>When are you tryin to go camping?</p>
-    <select id="months" label="months">
-      <option value="" disabled selected>Pick month below</option>
-      <option>January</option>
-      <option>February</option>
-      <option>March</option>
-      <option>April</option>
-      <option>May</option>
-      <option>June</option>
-      <option>July</option>
-      <option>August</option>
-      <option>September</option>
-      <option>October</option>
-      <option>November</option>
-      <option>December</option>
-    </select>
+    <div class="styled-select">
+      <select id="months" label="months">
+        <option value="" disabled selected>Pick month below</option>
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+        <option>May</option>
+        <option>June</option>
+        <option>July</option>
+        <option>August</option>
+        <option>September</option>
+        <option>October</option>
+        <option>November</option>
+        <option>December</option>
+      </select>
+    </div>
 
     <p>How far are you willin to drive?</p>
     <input type="range" name="distance" id="distance" min="0" max="75" step="5" onchange="showValue(this.value)"/>
     <span id="range">40 miles</span>
 
     <p>Haha water is funny you want it to be clean?</p>
-    <select id="water" name="water">
-      <option value="" disabled selected>Please choose</option>
-      <option>Yes</option>
-      <option>No</option>
-    </select>
+    <div class="styled-select">
+      <select id="water" name="water">
+        <option value="" disabled selected>Please choose</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
 
     <p>Do you want some form of bathroom?</p>
-    <select id="bathroom" label="bathroom">
-      <option value="" disabled selected>Please choose</option>
-      <option>Yes</option>
-      <option>No</option>
-    </select>
+    <div class="styled-select">
+      <select id="bathroom" label="bathroom">
+        <option value="" disabled selected>Please choose</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
 
     <p>You tryin cook on a fire out here?</p>
-    <select id="cook" label="cook">
-      <option value="" disabled selected>Please choose</option>
-      <option>Yes</option>
-      <option>No</option>
-    </select>
+    <div class="styled-select">
+      <select id="cook" label="cook">
+        <option value="" disabled selected>Please choose</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
 
 
     <script type="text/javascript">
