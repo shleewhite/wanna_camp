@@ -7,8 +7,11 @@
 <body class="main-body">
   <div class="main">
     <h1 id="header">So, You Wanna Camp in Santa Cruz?</h1>
-    {{> submit}}
-    <!-- {{> results}} -->
+    {{#if event}}
+      {{> results}}
+    {{else}}
+      {{> submit}}
+    {{/if}}
   </div>
 </body>
 
@@ -55,34 +58,40 @@
       <option>Yes</option>
       <option>No</option>
     </select>
-
-
-    <script type="text/javascript">
+    <br>
+    <br>
+	  <button class="button-submit">Find me a campground!</button>
+  </form>
+  <script type="text/javascript">
       function showValue(newValue) {
         document.getElementById("range").innerHTML=newValue + " miles";
       }
-    </script>
-    <br>
-    <br>
-
-	  <button class="button-submit">Find me a campground!</button>
-  </form>
+  </script>
 </template>
 
-<!-- <template name="results">
+<template name="results">
   {{#each places}} 
-    <div>
-      <p>{{name}}</p>
-      <ul>
-        <li>{{pet}}</li>
-        <li>{{water}}</li>
-        <li>{{plumbing}}</li>
-        <li>{{cooking}}</li>
-      </ul>
-      <ul>
-      <!-- ul of all elements of nearby -->
-     <!-- </ul> -->
-     <!-- if null: say no reservation -->
-    <!-- if not null: reservation: link {{reservation}}-->
-    <!-- </div> -->
-<!-- </template> -->
+  <div>
+    <p>{{name}}</p>
+    <ul>
+      <li>{{pet}}</li>
+      <li>{{water}}</li>
+      <li>{{plumbing}}</li>
+      <li>{{cooking}}</li>
+    </ul>
+    <ul id="nearby"></ul>
+    <!-- {{#if {{reservation}}==null}}
+      <p>First Come, First Serve Spots</p>
+    {{else}}
+      <p>Reserve Spot Here: {{reservation}}</p>
+    {{/if}} -->
+  </div>
+     <script>
+        var temp;
+        for (i = 0; i < {{nearby}}.length; i++) {
+          temp += "<li>"+{{nearby}}[i].value+"</li>";
+        }
+        document.getElementById("nearby").innerHTML = temp;
+    </script> 
+    {{/each}}
+</template>

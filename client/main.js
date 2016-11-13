@@ -22,13 +22,16 @@ if (Meteor.isClient) {
 						if( (arr[i].water == true && water == "Yes") || (arr[i].water == false && water == "No")) {
 							if( (arr[i].plumbing == true && bathroom == "Yes") || (arr[i].plumbing == false && bathroom == "No")) {
 								if( (arr[i].cooking == true && cook == "Yes") || (arr[i].cooking == false && cook == "No")) {
-									console.log(arr[i]);
+									return arr[i];
 								}
 							}
 						}
 					}
 				}
 			}
+    	},
+    	'result': function () {
+
     	}
     });
 }
