@@ -19,7 +19,9 @@ if (Meteor.isClient) {
 	        for(i = 0; i < arr.length; i++) {
 				if (arr[i].distance <= distance) {
 					if( !(arr[i].closed.indexOf(month) > -1)) {
-						console.log(arr[i]);
+						if( (arr[i].water == true && water == "Yes") || (arr[i].water == false && water == "No")) {
+							console.log(arr[i]);
+						}
 					}
 					// if ((arr[i].water == true) && (water == "yes")){
 					// 	console.log(arr[i].water, water);
@@ -27,9 +29,7 @@ if (Meteor.isClient) {
 					// 		console.log(arr[i].bathroom, bathroom);
 					// 		if ((arr[i].cooking == true && cook == "yes") || (arr[i].cooking == false && cook == "no")){
 					// 			console.log(arr[i].cooking, cooka);
-					// 			if (!(arr[i].closed.indexOf("month") > -1)){
-					// 				console.log(arr[i]);
-					// 			}
+					// 		
 					// 		}
 					// 	}
 					// }
