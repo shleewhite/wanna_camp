@@ -1,8 +1,4 @@
-Places = new Mongo.Collection( 'places' );
-
-// if ( Meteor.isServer ) {
-//   Places._ensureIndex( { name: 'generic campground', closed: null, distance: 1 } );
-// }
+CampSites = new Mongo.Collection( 'places' );
 
 let PlacesSchema = new SimpleSchema({
   'name': {
@@ -36,7 +32,11 @@ let PlacesSchema = new SimpleSchema({
   'nearby': {
   	type: [String],
   	label: 'List of things to do near the campsite.'
+  },
+  'pet': {
+  	type: Boolean,
+  	label: 'Whether or not pets are allowed at the camsite.'
   }
 });
 
-Places.attachSchema( PlacesSchema );
+CampSites.attachSchema( PlacesSchema );
