@@ -2,7 +2,6 @@ import { Meteor } from 'meteor/meteor';
 import { Template } from 'meteor/templating';
 
 import './main.html';
-// import '../server/main.js'
 
 Meteor.subscribe("CampSites");
 
@@ -17,11 +16,19 @@ if (Meteor.isClient) {
 	        var cook = document.getElementById("cook").value;
 	        var arr = CampSites.find().fetch();
 
-	        for(int i = 0; i < arr.length; i++) {
-	        	if (arr[i].distance <= distance) {
-	        		
-	        }
-	        console.log(arr[0].distance);
+	        for(i = 0; i < arr.length; i++) {
+				if (arr[i].distance <= distance) {
+					if( !(arr[i].closed.indexOf(month) > -1)) {
+						if( (arr[i].water == true && water == "Yes") || (arr[i].water == false && water == "No")) {
+							if( (arr[i].plumbing == true && bathroom == "Yes") || (arr[i].plumbing == false && bathroom == "No")) {
+								if( (arr[i].cooking == true && cook == "Yes") || (arr[i].cooking == false && cook == "No")) {
+									console.log(arr[i]);
+								}
+							}
+						}
+					}
+				}
+			}
     	}
     });
 }
