@@ -1,13 +1,25 @@
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans:300" rel="stylesheet">
   <title>Camp Cruz</title>
 </head>
 
-<body>
-  <h1>So, You Wanna Camp in Santa Cruz??????</h1>
+<body class="main-body">
+  <div class="main">
+    <p id="header">So, You Wanna Camp in Santa Cruz?</p>
+    <!-- i dont get why this is identified as a header, but is p -->
+    {{> submit}}
+    <!-- <div class="bottom"></div> -->
+    <!-- this was crashing the site, why not add padding to bottom of form... doesnt have to be a whole element -->
+  </div>
+</body>
 
+
+<template name="submit">
   <form>
-    <p>When are you tryin to go camping?</p>
+    <p>When are you trynna go camping?</p>
     <select id="months" label="months">
+      <option value="" disabled selected>Pick month below</option>
       <option>January</option>
       <option>February</option>
       <option>March</option>
@@ -21,34 +33,39 @@
       <option>November</option>
       <option>December</option>
     </select>
+
     <p>How far do you want to drive?</p>
     <input type="range" label="distance" min="0" max="75" step="5" onchange="showValue(this.value)"/>
     <span id="range">40 miles</span>
       
     <p>Can you purify your own water?</p>
-    <input type="radio" name="water" label="yes">Yes
-    <input type="radio" name="water" label="no">No
+    <select id="water" label="water">
+      <option value="" disabled selected>Please choose</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
 
     <p>Do you want some form of bathroom?</p>
-    <input type="radio" name="bathroom" label="yes">Yes
-    <input type="radio" name="bathroom" label="no">No
+    <select id="bathroom" label="bathroom">
+    <option value="" disabled selected>Please choose</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
 
     <p>You tryin cook out here?</p>
-    <input type="radio" name="cook" label="yes">Yes
-    <input type="radio" name="cook" label="no">No
+    <select id="cook" label="cook">
+    <option value="" disabled selected>Please choose</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
 
     <script type="text/javascript">
       function showValue(newValue) {
         document.getElementById("range").innerHTML=newValue + " miles";
       }
     </script>
-
     <br>
     <br>
-    {{> submit}}
+	  <button class="button-submit">Find me a campground!</button>
   </form>
-</body>
-
-<template name="submit">
-	<button>Submit</button>
 </template>

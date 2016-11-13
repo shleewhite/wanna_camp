@@ -1,1 +1,92 @@
-/* CSS declarations go here */
+.main-body{
+    background-image: url(http://www.shleewhite.com/trees.jpg);
+    background-color: #cccccc;
+    
+    background-size: 100%;
+    background-repeat: no-repeat;
+	
+    min-height: 100%;
+    width: 100%;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.main{
+	text-align: center;
+	border-radius: 15px;
+	margin-top: 2%;
+	margin-right: 15%;
+	margin-left: 15%;
+	height: 85%;
+	background-color:rgba(1, 1, 1, 0.5);
+
+}
+
+#header{
+/*	font-family: 'Open Sans', sans-serif;
+*/	font-family: 'Shrikhand', cursive;
+	padding-top:40px;
+	font-size: 2.5em;
+}
+
+form {
+	padding-bottom: 50px
+}
+
+@media screen and (max-width: 450px) {
+	#header {
+		font-size: 30px;
+	}
+}
+
+@media screen and (max-width: 1175px){
+	.main-body{
+		background-image: url(http://www.shleewhite.com/trees.jpg);
+    	background-color: #cccccc;
+
+    	background-size: 100%;
+   		background-repeat: repeat;
+	}
+}
+
+p, #range{
+	font-family: 'Gotham-Medium', "Helvetica Neue", Helvetica, sans-serif;
+/*	font-family: 'Dosis', sans-serif;*/
+	color:white;
+	letter-spacing: 0.1em;
+    line-height: 30px;
+}
+
+.styled-select select {
+   background: transparent;
+   width: 268px;
+/*   padding: 5px;*/
+   font-size: 16px;
+   line-height: 1;
+   border: 0;
+   border-radius: 0;
+   height: 34px;
+   -webkit-appearance: none;
+   }
+
+/*label{
+	font-family: 'Dosis', sans-serif;
+	color:white;
+}*/
+
+.button-submit{
+    font-family: 'Gotham-Medium', "Helvetica Neue", Helvetica, sans-serif;
+    color: white;
+    background: none;
+    border-color: white;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    line-height: 40px;
+    text-decoration: none;
+    width:20em;
+	margin-top: 2%;
+    text-align:center;
+    cursor: pointer;
+}
