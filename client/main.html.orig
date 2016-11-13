@@ -1,66 +1,120 @@
 <head>
+  <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans:300" rel="stylesheet">
   <title>Camp Cruz</title>
-  <script src="main.js"></script>
 </head>
 
-<body>
-  <h1>So, You Wanna Camp in Santa Cruz??????</h1>
-
-  <form>
-    <p>When are ya tryin to go camping?</p>
-    <select id="months">
-      <option>January</option>
-      <option>February</option>
-      <option>March</option>
-      <option>April</option>
-      <option>May</option>
-      <option>June</option>
-      <option>July</option>
-      <option>August</option>
-      <option>September</option>
-      <option>October</option>
-      <option>November</option>
-      <option>December</option>
-    </select>
-    <p>How far do you want to drive?</p>
-    <input type="range" min="0" max="75" step="5" onchange="showValue(this.value)"/>
-    <span id="range">40 miles</span>
-      
-    <p>Can you purify your own water?</p>
-    <input type="radio" name="water-is-pure" label="yes">Yes
-    <input type="radio" name="water-not-pure" label="no">No
-
-    <p>Do you want some form of bathroom?</p>
-    <input type="radio" name="need-bathroom" label="yes">Yes
-    <input type="radio" name="no-bathroom" label="no">No
-
-    <p>You trynna cook out here?</p>
-<<<<<<< HEAD
-    <input type="radio" name="yes-cook" label="yes">Yes
-    <input type="radio" name="no-cook" label="no">No
-=======
-    <input type="radio" name="water-is-pure" label="yes">Yes
-    <input type="radio" name="water-not-pure" label="no">No
-
-    <script type="text/javascript">
-        function showValue(newValue) {
-          document.getElementById("range").innerHTML=newValue + " miles";
-        }
-    </script>
-
-    <br>
-    <br>
-    {{> submit}}
->>>>>>> 62a47dea9096ab844703fd387ba4ad1afd5b0221
-  </form>
-  <script type="text/javascript">
-    function showValue(newValue) {
-      document.getElementById("range").innerHTML=newValue + " miles";
-    }
-  </script>
+<body class="main-body">
+  <div class="main">
+    <h1 id="header">So, You Wanna Camp in Santa Cruz?</h1>
+    {{#if event}}
+      {{> results}}
+    {{else}}
+      {{> submit}}
+    {{/if}}
+  </div>
 </body>
 
-
 <template name="submit">
-	<button>Submit</button>
+  <form id="subButton">
+    <p>When are you tryin to go camping?</p>
+    <div class="styled-select">
+      <select id="months" label="months">
+        <option value="" disabled selected>Pick month below</option>
+        <option>January</option>
+        <option>February</option>
+        <option>March</option>
+        <option>April</option>
+        <option>May</option>
+        <option>June</option>
+        <option>July</option>
+        <option>August</option>
+        <option>September</option>
+        <option>October</option>
+        <option>November</option>
+        <option>December</option>
+      </select>
+    </div>
+
+    <p>How far are you willin to drive?</p>
+    <input type="range" name="distance" id="distance" min="0" max="75" step="5" onchange="showValue(this.value)"/>
+    <span id="range">40 miles</span>
+
+    <p>Haha water is funny you want it to be clean?</p>
+    <div class="styled-select">
+      <select id="water" name="water">
+        <option value="" disabled selected>Please choose</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+
+    <p>Do you want some form of bathroom?</p>
+    <div class="styled-select">
+      <select id="bathroom" label="bathroom">
+        <option value="" disabled selected>Please choose</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+
+    <p>You tryin cook on a fire out here?</p>
+<<<<<<< HEAD
+    <select id="cook" label="cook">
+      <option value="" disabled selected>Please choose</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+=======
+    <div class="styled-select">
+      <select id="cook" label="cook">
+        <option value="" disabled selected>Please choose</option>
+        <option>Yes</option>
+        <option>No</option>
+      </select>
+    </div>
+
+
+    <script type="text/javascript">
+      function showValue(newValue) {
+        document.getElementById("range").innerHTML=newValue + " miles";
+      }
+    </script>
+>>>>>>> 022ce29e94b9da3489478f1fe9da2ef2a26e028b
+    <br>
+    <br>
+	  <button class="button-submit">Find me a campground!</button>
+  </form>
+  <script type="text/javascript">
+      function showValue(newValue) {
+        document.getElementById("range").innerHTML=newValue + " miles";
+      }
+  </script>
+</template>
+
+<template name="results">
+  {{#each places}} 
+  <div>
+    <p>{{name}}</p>
+    <ul>
+      <li>{{pet}}</li>
+      <li>{{water}}</li>
+      <li>{{plumbing}}</li>
+      <li>{{cooking}}</li>
+    </ul>
+    <ul id="nearby"></ul>
+    <!-- {{#if {{reservation}}==null}}
+      <p>First Come, First Serve Spots</p>
+    {{else}}
+      <p>Reserve Spot Here: {{reservation}}</p>
+    {{/if}} -->
+  </div>
+     <script>
+        var temp;
+        for (i = 0; i < {{nearby}}.length; i++) {
+          temp += "<li>"+{{nearby}}[i].value+"</li>";
+        }
+        document.getElementById("nearby").innerHTML = temp;
+    </script> 
+    {{/each}}
 </template>
