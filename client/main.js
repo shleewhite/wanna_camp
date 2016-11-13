@@ -20,19 +20,13 @@ if (Meteor.isClient) {
 				if (arr[i].distance <= distance) {
 					if( !(arr[i].closed.indexOf(month) > -1)) {
 						if( (arr[i].water == true && water == "Yes") || (arr[i].water == false && water == "No")) {
-							console.log(arr[i]);
+							if( (arr[i].plumbing == true && bathroom == "Yes") || (arr[i].plumbing == false && bathroom == "No")) {
+								if( (arr[i].cooking == true && cook == "Yes") || (arr[i].cooking == false && cook == "No")) {
+									console.log(arr[i]);
+								}
+							}
 						}
 					}
-					// if ((arr[i].water == true) && (water == "yes")){
-					// 	console.log(arr[i].water, water);
-					// 	if ((arr[i].bathroom == true && bathroom == "yes") || (arr[i].bathroom == false && bathroom == "no")) {
-					// 		console.log(arr[i].bathroom, bathroom);
-					// 		if ((arr[i].cooking == true && cook == "yes") || (arr[i].cooking == false && cook == "no")){
-					// 			console.log(arr[i].cooking, cooka);
-					// 		
-					// 		}
-					// 	}
-					// }
 				}
 			}
     	}
