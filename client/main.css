@@ -1,93 +1,85 @@
 .main-body{
     background-image: url(http://www.shleewhite.com/trees.jpg);
-    background-color: #cccccc;
-    
     background-size: 100%;
     background-repeat: no-repeat;
-	
-    min-height: 100%;
-    width: 100%;
-
-    position: relative;
-    top: 0;
-    left: 0;
 }
 
 .main{
 	text-align: center;
 	border-radius: 15px;
 	margin-top: 2%;
+  margin-bottom: 2%;
 	margin-right: 15%;
 	margin-left: 15%;
-	height: 85%;
 	background-color:rgba(1, 1, 1, 0.5);
-
+  min-width: 275px;
 }
 
 #header{
-/*	font-family: 'Open Sans', sans-serif;
-*/	font-family: 'Shrikhand', cursive;
-	padding-top:40px;
-	font-size: 2.5em;
+	font-family: 'Shrikhand', cursive;
+	padding-top: 15px;
 	color: white;
+  margin-bottom: 0px;
 }
 
-form {
-	padding-bottom: 50px
-}
-
-@media screen and (max-width: 450px) {
-	#header {
-		font-size: 20px;
-	}
-}
-
-@media screen and (max-width: 1175px){
-	.main-body{
-		background-image: url(http://www.shleewhite.com/trees.jpg);
-    	background-color: #cccccc;
-
-    	background-size: 100%;
-   		background-repeat: repeat;
-	}
-}
-
-p, #range{
+p, span, select{
 	font-family: 'Gotham-Medium', "Helvetica Neue", Helvetica, sans-serif;
-/*	font-family: 'Dosis', sans-serif;*/
-	color:white;
-	letter-spacing: 0.1em;
-    line-height: 30px;
+	color: white;
+	letter-spacing: 0.01em;
+  line-height: 30px;
 }
 
-.styled-select select {
-   background: transparent;
-   width: 268px;
-/*   padding: 5px;*/
-   font-size: 16px;
-   line-height: 1;
-   border: 0;
-   border-radius: 0;
-   height: 34px;
-   -webkit-appearance: none;
-   }
+p { 
+  font-weight: bold;
+  margin: 10px; 
+}
 
-/*label{
-	font-family: 'Dosis', sans-serif;
-	color:white;
-}*/
+span, select { 
+  color: black;
+}
+
+select {
+  background: #d0d3d8;
+  width: 268px;
+  font-size: 15px;
+  height: 34px;
+}
+
+.mileRange, select {
+  opacity: 0.75;
+}
+
+.mileRange {
+  background-color: #d0d3d8;
+  height: 60px;
+  width: 270px;
+  margin-right: auto;
+  margin-left: auto; 
+  border-radius: 5px;
+  border-style: solid;
+  border-color: #a6a6a6;
+  border-width: 1px;
+}
 
 .button-submit{
     font-family: 'Gotham-Medium', "Helvetica Neue", Helvetica, sans-serif;
-    color: white;
-    background: none;
-    border-color: white;
-    letter-spacing: 0.2em;
+    color: black;
+    background-color: #efed73;
+    border: none;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    line-height: 40px;
-    text-decoration: none;
-    width:20em;
-	margin-top: 2%;
+    line-height: 30px;
+    width: 200px;
+	  margin-top: 20px;
+    margin-bottom: 15px;
     text-align:center;
-    cursor: pointer;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 450px) {
+  #header { font-size: 20px; }
+}
+
+@media screen and (max-height: 650px) {
+  .main-body { background-repeat: repeat; }
 }

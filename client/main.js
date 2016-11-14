@@ -30,8 +30,8 @@ if (Meteor.isClient) {
 				}
 			}
     	},
-    	'result': function () {
+    	// 'result': function () {
 
-    	}
+    	// }
     });
 }

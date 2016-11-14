@@ -6,72 +6,62 @@
 
 <body class="main-body">
   <div class="main">
-    <h1 id="header">So, You Wanna Camp in Santa Cruz?</h1>
-    {{#if event}}
+    <h1 id="header">So, You Want to Camp in Santa Cruz?</h1>
+    <!-- {{#if event}}
       {{> results}}
-    {{else}}
+    {{else}} -->
       {{> submit}}
-    {{/if}}
+    <!-- {{/if}} -->
   </div>
 </body>
 
 <template name="submit">
   <form id="subButton">
-    <p>When are you tryin to go camping?</p>
-    <div class="styled-select">
-      <select id="months" label="months">
-        <option value="" disabled selected>Pick month below</option>
-        <option>January</option>
-        <option>February</option>
-        <option>March</option>
-        <option>April</option>
-        <option>May</option>
-        <option>June</option>
-        <option>July</option>
-        <option>August</option>
-        <option>September</option>
-        <option>October</option>
-        <option>November</option>
-        <option>December</option>
-      </select>
+    <p>When do you want to go?</p>
+    <select id="months" label="months">
+      <option value="" disabled selected>Please Choose</option>
+      <option>January</option>
+      <option>February</option>
+      <option>March</option>
+      <option>April</option>
+      <option>May</option>
+      <option>June</option>
+      <option>July</option>
+      <option>August</option>
+      <option>September</option>
+      <option>October</option>
+      <option>November</option>
+      <option>December</option>
+    </select>
+
+    <p>How far do you want to drive from campus?</p>
+    <div class="mileRange">
+      <span>0</span>
+      <input type="range" name="distance" id="distance" min="0" max="75" step="5" onchange="showValue(this.value)"/>
+      <span>75</span>
+      <br><span id="range">40 miles</span>
     </div>
 
-    <p>How far are you willin to drive?</p>
-    <input type="range" name="distance" id="distance" min="0" max="75" step="5" onchange="showValue(this.value)"/>
-    <span id="range">40 miles</span>
-
-    <p>Haha water is funny you want it to be clean?</p>
-    <div class="styled-select">
-      <select id="water" name="water">
-        <option value="" disabled selected>Please choose</option>
-        <option>Yes</option>
-        <option>No</option>
-      </select>
-    </div>
-
-    <p>Do you want some form of bathroom?</p>
-    <div class="styled-select">
-      <select id="bathroom" label="bathroom">
-        <option value="" disabled selected>Please choose</option>
-        <option>Yes</option>
-        <option>No</option>
-      </select>
-    </div>
-
-    <p>You tryin cook on a fire out here?</p>
-    <select id="cook" label="cook">
-      <option value="" disabled selected>Please choose</option>
+    <p>Do you need clean water at the site?</p>
+    <select id="water" name="water">
+      <option value="" disabled selected>Please Choose</option>
       <option>Yes</option>
       <option>No</option>
     </select>
 
-    <div class="styled-select">
-      <select id="cook" label="cook">
-        <option value="" disabled selected>Please choose</option>
-        <option>Yes</option>
-        <option>No</option>
-      </select>
-    </div>
+    <p>Do you want some form of bathroom?</p>
+    <select id="bathroom" label="bathroom">
+      <option value="" disabled selected>Please Choose</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
+
+    <p>Do you want to have a fire?</p>
+    <select id="cook" label="cook">
+      <option value="" disabled selected>Please Choose</option>
+      <option>Yes</option>
+      <option>No</option>
+    </select>
 
 
     <script type="text/javascript">
@@ -79,7 +69,6 @@
         document.getElementById("range").innerHTML=newValue + " miles";
       }
     </script>
-    <br>
     <br>
 	  <button class="button-submit">Find me a campground!</button>
   </form>
@@ -90,7 +79,7 @@
   </script>
 </template>
 
-<template name="results">
+<!-- <template name="results">
   {{#each places}} 
   <div>
     <p>{{name}}</p>
@@ -101,11 +90,11 @@
       <li>{{cooking}}</li>
     </ul>
     <ul id="nearby"></ul>
-    <!-- {{#if {{reservation}}==null}}
+    {{#if {{reservation}}==null}}
       <p>First Come, First Serve Spots</p>
     {{else}}
       <p>Reserve Spot Here: {{reservation}}</p>
-    {{/if}} -->
+    {{/if}}
   </div>
      <script>
         var temp;
@@ -116,3 +105,4 @@
     </script> 
     {{/each}}
 </template>
+ -->
