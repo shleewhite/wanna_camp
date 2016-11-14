@@ -23,7 +23,7 @@
   text-shadow: 3px 3px black;
 }
 
-p, span, select, li {
+p, span, select, li, ul {
 	font-family: 'Gotham-Medium', "Helvetica Neue", Helvetica, sans-serif;
 	color: white;
 	letter-spacing: 0.01em;
@@ -96,19 +96,22 @@ select {
   background-color: #d0d3d8;
   /*opacity: 0.75;*/
   width: 350px;
-  height: 250px;
+  height: 325px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 5px;
   border-radius: 5px;
+  padding-top: 3px;
 }
 
-#results div p, #results div ul li{
-  color: black;
+#results div p { 
+  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 0px; 
 }
 
+#results div p, #results div ul li, #results div ul{ color: black; }
 #results div ul li { line-height: 20px; }
-#results div p { margin: 0px; }
 #results div div { background: none; }
 #results div ul { text-align: left; }
 
