@@ -62,7 +62,7 @@ select {
   border-width: 1px;
 }
 
-.button-submit{
+.button-submit, #results a {
     font-family: 'Gotham-Medium', "Helvetica Neue", Helvetica, sans-serif;
     color: black;
     background-color: #efed73;
@@ -75,6 +75,12 @@ select {
     margin-bottom: 15px;
     text-align:center;
     font-weight: bold;
+}
+
+#results a {
+  padding: 5px;
+  font-size: 15px;
+  text-decoration: none;
 }
 
 @media screen and (max-width: 450px) {

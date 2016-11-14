@@ -1,18 +1,14 @@
 <head>
   <link href="https://fonts.googleapis.com/css?family=Shrikhand" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Dosis|Open+Sans:300" rel="stylesheet">
-
   <title>Camp Cruz</title>
 </head>
 
 <body class="main-body">
   <div class="main">
     <h1 id="header">So, You Want to Camp in Santa Cruz?</h1>
-    <!-- {{#if event}}
-      {{> results}}
-    {{else}} -->
-      {{> submit}}
-    <!-- {{/if}} -->
+    {{> submit}}
+    <div id="results"></div>
   </div>
 </body>
 
@@ -72,6 +68,7 @@
     </script>
     <br>
 	  <button class="button-submit">Find me a campground!</button>
+
   </form>
   <script type="text/javascript">
       function showValue(newValue) {

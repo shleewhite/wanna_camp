@@ -8,6 +8,7 @@ Meteor.subscribe("CampSites");
 if (Meteor.isClient) {
     Template.submit.events({
 		'submit #subButton': function( event ){
+			var results;
         	event.preventDefault();
 	        var month =	document.getElementById("months").value;
 	        var distance = document.getElementById("distance").value;
@@ -16,22 +17,25 @@ if (Meteor.isClient) {
 	        var cook = document.getElementById("cook").value;
 	        var arr = CampSites.find().fetch();
 
+	        document.getElementById("subButton").style.display = "none";
+
 	        for(i = 0; i < arr.length; i++) {
 				if (arr[i].distance <= distance) {
 					if( !(arr[i].closed.indexOf(month) > -1)) {
 						if( (arr[i].water == true && water == "Yes") || (arr[i].water == false && water == "No")) {
 							if( (arr[i].plumbing == true && bathroom == "Yes") || (arr[i].plumbing == false && bathroom == "No")) {
 								if( (arr[i].cooking == true && cook == "Yes") || (arr[i].cooking == false && cook == "No")) {
-									return arr[i];
+									console.log(arr[i]);
+									results += arr[i].name;
+
 								}
 							}
 						}
 					}
 				}
 			}
-    	},
-    	// 'result': function () {
-
-    	// }
+			document.getElementById("results").innerHTML += results;
+			document.getElementById("results").innerHTML += "<br><a href='/'>Begin New Search</a>"
+    	}
     });
 }
