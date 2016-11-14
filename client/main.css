@@ -94,14 +94,13 @@ select {
 
 #results div {
   background-color: #d0d3d8;
-  /*opacity: 0.75;*/
   width: 350px;
-  height: 325px;
   margin-right: auto;
   margin-left: auto;
   margin-bottom: 5px;
   border-radius: 5px;
   padding-top: 3px;
+  padding-bottom: 5px;
 }
 
 #results div p { 

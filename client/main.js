@@ -27,6 +27,7 @@ if (Meteor.isClient) {
 							if( (arr[i].plumbing == true && bathroom == "Yes") || (arr[i].plumbing == false && bathroom == "No")) {
 								if( (arr[i].cooking == true && cook == "Yes") || (arr[i].cooking == false && cook == "No")) {
 									num += 1;
+									console.log(arr[i]);
 									results.innerHTML += resHTML(arr[i].name, arr[i].pet, arr[i].water, arr[i].plumbing, arr[i].distance, arr[i].nearby, arr[i].reservation, arr[i].cooking);
 								}
 							}
@@ -40,22 +41,22 @@ if (Meteor.isClient) {
 
 			function resHTML (name, pet, water, bathroom, distance, nearby, reservation, fire) {
 				var result;
-				var nearbyLength = nearby.length;
 				result = "<div><p>"+ name + "</p>"
 						  + "<ul><li>Pets Allowed: " + pet + "</li>"
 						  + "<li>Fires Allowed: " + fire + "</li>"
 						  + "<li>Water on Site: " + water + "</li>"
 						  + "<li>Bathrooms on Site: " + bathroom + "</li>"
-						  + "<li>Distance from UCSC Campus: " + distance + " miles</li></ul>"
-						  + "<ul>Features of Campsite:";
-				console.log(nearby.length);
-				for (m = 0; m < nearbyLength; m++) {
-					result += "<li>" + nearby[m] + "</li>";
-				}
-				result += "</ul>";
+						  + "<li>Distance from UCSC Campus: " + distance + " miles</li></ul>";
+				if (nearby != null) {
+					result += "<ul>Features of Campsite:";
+					for (m = 0; m < nearby.length; m++) {
+						result += "<li>" + nearby[m] + "</li>";
+					}
+					result += "</ul>";
+				} 
 				if (reservation != null) {
 					result += "<p>Reserve Campsite <a href='" + reservation + "' style='text-decoration: none;'>Here!</a></p></div>";
-				} else { result += "</div>"; }
+				} else { result += "<p>Campsite is First Come, First Serve!</p></div>"; }
 				return result;
 			}
     	}
