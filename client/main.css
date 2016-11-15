@@ -35,9 +35,7 @@ p {
   margin: 10px; 
 }
 
-span, select { 
-  color: black;
-}
+span, select { color: black; }
 
 select {
   background: #d0d3d8;
@@ -46,9 +44,7 @@ select {
   height: 34px;
 }
 
-.mileRange, select {
-  opacity: 0.75;
-}
+.mileRange, select { opacity: 0.75; }
 
 .mileRange {
   background-color: #d0d3d8;
