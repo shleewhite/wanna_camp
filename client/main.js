@@ -46,14 +46,11 @@ if (Meteor.isClient) {
 						  + "<li>Fires Allowed: " + fire + "</li>"
 						  + "<li>Water on Site: " + water + "</li>"
 						  + "<li>Bathrooms on Site: " + bathroom + "</li>"
-						  + "<li>Distance from UCSC Campus: " + distance + " miles</li></ul>";
-				if (nearby != null) {
-					result += "<ul>Features of Campsite:";
-					for (m = 0; m < nearby.length; m++) {
-						result += "<li>" + nearby[m] + "</li>";
-					}
-					result += "</ul>";
-				} 
+						  + "<li>Distance from UCSC Campus: " + distance + " miles</li></ul><ul>Features of Campsite:";
+				for (m = 0; m < nearby.length; m++) {
+					result += "<li>" + nearby[m] + "</li>";
+				}
+				result += "</ul>";
 				if (reservation != null) {
 					result += "<p>Reserve Campsite <a href='" + reservation + "' style='text-decoration: none;'>Here!</a></p></div>";
 				} else { result += "<p>Campsite is First Come, First Serve!</p></div>"; }
